@@ -48,3 +48,13 @@ UIVERSE-INSPIRED FLIP CARD UPDATE
 - Retained camera background, scanning beam, particles, navigation and LinkedIn actions.
 - The phone-motion button and phone/pointer tilt remain removed.
 - Vertical page and card scrollbars remain hidden; content is sized for mobile viewports.
+
+
+TRUE FLIP CARD UPDATE (Uiverse little-goat-24 reference)
+- Reference: rounded orange-gradient card with shadow that flips. Rebuilt as a real two-sided 3D flip:
+  front = profile, back = areas of expertise. Flip via card tap/click, arrows, dots or swipe.
+- Warm amber gradient, rounded corners, layered shadow and reflective sweep after each flip.
+- Fixed bug: app.js referenced an undefined `wrap` variable, which stopped the script (camera, navigation, swipe).
+- Removed leftover "Updated" text from the top bar. Hidden side is non-interactive and hidden from screen readers.
+- Camera, scanning beam, particles, camera switch/retry and LinkedIn links retained.
+- Uiverse content is MIT licensed; this is an adaptation of the idea, not a copy of the demo code.

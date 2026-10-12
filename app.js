@@ -8,6 +8,7 @@
   const switchBtn=document.getElementById('switch-camera');
   const canvas=document.getElementById('fx-canvas');
   const ctx=canvas.getContext('2d');
+  const wrap=document.querySelector('.card-wrap');
   const cards=[...document.querySelectorAll('.card')];
   const dots=[...document.querySelectorAll('.dot')];
   const current=document.getElementById('current-number');
@@ -17,7 +18,8 @@
 
   function show(n){
     active=(n+cards.length)%cards.length;
-    cards.forEach((c,i)=>c.classList.toggle('active',i===active));
+    cards.forEach((c,i)=>{c.classList.toggle('active',i===active);c.setAttribute('aria-hidden',i===active?'false':'true');c.querySelectorAll('a').forEach(a=>a.tabIndex=i===active?0:-1)});
+    wrap.classList.toggle('flipped',active===1);
     dots.forEach((d,i)=>d.classList.toggle('active',i===active));
     current.textContent=String(active+1).padStart(2,'0');
     runScan();
@@ -33,6 +35,7 @@
   document.getElementById('prev').addEventListener('click',()=>show(active-1));
   document.getElementById('next').addEventListener('click',()=>show(active+1));
   dots.forEach(d=>d.addEventListener('click',()=>show(+d.dataset.to)));
+  wrap.addEventListener('click',e=>{if(e.target.closest('a,button'))return;show(active+1)});
   wrap.addEventListener('touchstart',e=>{touchX=e.changedTouches[0].clientX},{passive:true});
   wrap.addEventListener('touchend',e=>{if(touchX===null)return;const dx=e.changedTouches[0].clientX-touchX;if(Math.abs(dx)>50)show(active+(dx<0?1:-1));touchX=null},{passive:true});
 
