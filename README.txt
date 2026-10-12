@@ -13,24 +13,38 @@ NEW EFFECTS
 - Premium transparent glass card with moving glass reflection and soft light response.
 - Animated horizontal scanning beam when the experience opens and when switching slides.
 - Lightweight floating mint particles and occasional glints, drawn on a canvas.
+- Phone-motion response: tap ENABLE MOTION, then gently tilt your phone to give the card a subtle 3D tilt.
+- Desktop pointer-movement fallback for previewing the tilt/reflection.
 - Existing live camera background, front/rear camera switch, retry option, slide navigation, swipe gestures and LinkedIn links retained.
 - Honors reduced-motion preference and pauses particle rendering while the tab is hidden.
 
 DEPLOYMENT / BROWSER REQUIREMENTS
-1. Upload all files to a site served over HTTPS. Camera APIs generally require a secure context; localhost is suitable for local development.
+1. Upload all files to a site served over HTTPS. Camera and motion APIs generally require a secure context; localhost is suitable for local development.
 2. Open the hosted page on a recent mobile browser and allow camera access when prompted.
-3. For best results, use a current Safari on iOS or Chrome on Android. Browser settings, OS privacy settings, and embedded in-app browsers may limit camera access.
-4. Generate a QR code that points to the final HTTPS URL after uploading.
+3. Tap ENABLE MOTION. Some iPhones/iOS browsers ask for motion permission after this user gesture. If permission is declined or unavailable, the camera card still works and touch/swipe navigation remains available.
+4. For best results, use a current Safari on iOS or Chrome on Android. Browser settings, OS privacy settings, and embedded in-app browsers may limit camera or motion access.
+5. Generate a QR code that points to the final HTTPS URL after uploading.
 
 IMPORTANT AR DISTINCTION
-This is an AR-style camera overlay. It does not detect planes, track a physical surface, or anchor the card to a real-world point. Surface/image-anchored AR requires a compatible WebXR/AR tracking implementation and supported device/browser.
+This is an AR-style camera overlay with device-orientation tilt. It does not detect planes, track a physical surface, or anchor the card to a real-world point. Surface/image-anchored AR requires a compatible WebXR/AR tracking implementation and supported device/browser.
 
 TROUBLESHOOTING
 - Black/no camera: check HTTPS and browser site permissions; tap Retry camera.
-
+- No phone tilt: tap ENABLE MOTION and accept the prompt if shown. On some browsers, motion sensors are blocked or unavailable.
 - Camera unavailable in a QR app's built-in browser: open the page in the device's full Safari/Chrome browser.
 
 
-Floating skill labels
-- Animated callouts: Social Media, Brand Management, and Strategic Partnerships.
-- Includes thin animated connector lines and glowing anchor points.
+REFINED VERSION
+- Removed the ENABLE MOTION button, motion hint, device-orientation response and pointer-follow tilt.
+- Removed vertical scrollbars and adjusted the card layout to fit the mobile viewport.
+- Added a premium CSS card reveal and reflective sweep inspired by the linked Uiverse glass/3D card-hover reference.
+- Preserved live camera background, scanning beam, particles, camera switch/retry, swipe navigation and LinkedIn links.
+- Camera access still requires HTTPS and browser permission. This is an AR-style overlay, not surface-tracked AR.
+
+
+UIVERSE-INSPIRED FLIP CARD UPDATE
+- Adapted the linked card reference's flip, rounded corners, gradient, shadow and hover styling to the existing business card.
+- Added a subtle 3D Y-axis entrance transition when switching slides, with a warm amber gradient accent.
+- Retained camera background, scanning beam, particles, navigation and LinkedIn actions.
+- The phone-motion button and phone/pointer tilt remain removed.
+- Vertical page and card scrollbars remain hidden; content is sized for mobile viewports.

@@ -8,7 +8,6 @@
   const switchBtn=document.getElementById('switch-camera');
   const canvas=document.getElementById('fx-canvas');
   const ctx=canvas.getContext('2d');
-  const wrap=document.querySelector('.card-wrap');
   const cards=[...document.querySelectorAll('.card')];
   const dots=[...document.querySelectorAll('.dot')];
   const current=document.getElementById('current-number');
